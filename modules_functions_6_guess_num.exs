@@ -3,7 +3,7 @@ defmodule GuessNum do
     bottom..top = range
     guess_num = div(top - bottom, 2) + bottom
     IO.puts("Is it #{guess_num}?")
-    GuessNum.check(actual, guess_num, bottom, top)
+    check(actual, guess_num, bottom, top)
   end
 
   def check(actual, guess_num, bottom, top) when actual == guess_num do
@@ -11,11 +11,11 @@ defmodule GuessNum do
   end
 
   def check(actual, guess_num, bottom, top) when guess_num > actual do
-    GuessNum.guess(actual, bottom..guess_num - 1)
+    guess(actual, bottom..guess_num - 1)
   end
 
   def check(actual, guess_num, bottom, top) when guess_num < actual do
-    GuessNum.guess(actual, guess_num + 1..top)
+    guess(actual, guess_num + 1..top)
   end
 end
 
